@@ -1,0 +1,255 @@
+<li dir="rtl" *ngFor="let item of myTodayCalendar">
+	<div *ngIf="item.WD ==='Sunday' ">اليوم هو: الأحد</div>
+	<div *ngIf="item.WD ==='Monday' ">اليوم هو: الاثنين</div>
+	<div *ngIf="item.WD ==='Tuseday' ">اليوم هو: الثلاثاء</div>
+	<div *ngIf="item.WD ==='Wednesday' ">اليوم هو: الأربعاء</div>
+	<div *ngIf="item.WD ==='Thursday' ">اليوم هو: الخميس</div>
+	<div *ngIf="item.WD ==='Friday' ">اليوم هو: الجمعة</div>
+	<div *ngIf="item.WD ==='Saturday' ">اليوم هو: السبت</div>
+	الموافق لـ
+	<span>{{item.HY}}/{{item.HM}}/{{item.HD}}</span>هجري قمري
+	<br>
+	<span>{{item.GY}}/{{item.GM}}/{{item.GD}}</span>ميلادي
+	<br>
+	<span >{{item.SHY}}/{{item.SHM}}/{{item.SHD}}</span>هجري شمسي
+</li>
+<div class="container" >
+
+	
+	<div class="row ">
+		<div class="col-md-offset-4">
+			<select class="selectpicker" #hd name="hijriDaysInput" size="1" style="color:black;">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+				<option value="6">6</option>
+				<option value="7">7</option>
+				<option value="8">8</option>
+				<option value="9">9</option>
+				<option value="10">10</option>
+				<option value="11">11</option>
+				<option value="12">12</option>
+				<option value="13">13</option>
+				<option value="14">14</option>
+				<option value="15">15</option>
+				<option value="16">16</option>
+				<option value="17">17</option>
+				<option value="18">18</option>
+				<option value="19">19</option>
+				<option value="20">20</option>
+				<option value="21">21</option>
+				<option value="22">22</option>
+				<option value="23">23</option>
+				<option value="24">24</option>
+				<option value="25">25</option>
+				<option value="26">26</option>
+				<option value="27">27</option>
+				<option value="28">28</option>
+				<option value="29">29</option>
+				<option value="30">30</option>
+			</select>
+			<select #hm name="hijriMonthsInput"  size="1" style="color:black;">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+				<option value="6">6</option>
+				<option value="7">7</option>
+				<option value="8">8</option>
+				<option value="9">9</option>
+				<option value="10">10</option>
+				<option value="11">11</option>
+				<option value="12">12</option>
+			</select>
+			<input type="number" #hy name="hijriYearsInput"  min="1318" max="1500" value="1438" style="color:black;">
+		</div>
+	</div>
+
+	<div class="row">
+        <div class=" col-md-offset-3">
+            <article class="panel panel-default" >
+				<button (click)="getByHijri(hd.value,hm.value,hy.value)" class="btn btn-primary">حول بواسطة الهجري القمري</button>
+                <div class="panel-body">
+					<li class="list-unstyled" dir="rtl" *ngFor="let item of myHijriCalendar">
+						<div *ngIf="item.WD ==='Sunday' ">الأحد</div>
+						<div *ngIf="item.WD ==='Monday' ">الاثنين</div>
+						<div *ngIf="item.WD ==='Tuseday' ">الثلاثاء</div>
+						<div *ngIf="item.WD ==='Wednesday' ">الأربعاء</div>
+						<div *ngIf="item.WD ==='Thursday' ">الخميس</div>
+						<div *ngIf="item.WD ==='Friday' ">الجمعة</div>
+						<div *ngIf="item.WD ==='Saturday' ">السبت</div>
+						الموافق لـ
+						<span>{{item.GY}}/{{item.GM}}/{{item.GD}}</span>ميلادي
+						<br>
+						<span >{{item.SHY}}/{{item.SHM}}/{{item.SHD}}</span>هجري شمسي
+					</li>
+                </div>
+            </article>
+        </div>
+    </div>
+
+	<div class="row">
+		<div class="col-md-offset-4">
+			<select #gd name="gregorianDaysInput" size="1" style="color:black;">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+				<option value="6">6</option>
+				<option value="7">7</option>
+				<option value="8">8</option>
+				<option value="9">9</option>
+				<option value="10">10</option>
+				<option value="11">11</option>
+				<option value="12">12</option>
+				<option value="13">13</option>
+				<option value="14">14</option>
+				<option value="15">15</option>
+				<option value="16">16</option>
+				<option value="17">17</option>
+				<option value="18">18</option>
+				<option value="19">19</option>
+				<option value="20">20</option>
+				<option value="21">21</option>
+				<option value="22">22</option>
+				<option value="23">23</option>
+				<option value="24">24</option>
+				<option value="25">25</option>
+				<option value="26">26</option>
+				<option value="27">27</option>
+				<option value="28">28</option>
+				<option value="29">29</option>
+				<option value="30">30</option>
+				<option value="31">31</option>
+		</select>
+			<select #gm name="gregorianMonthsInput" size="1" style="color:black;">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+				<option value="6">6</option>
+				<option value="7">7</option>
+				<option value="8">8</option>
+				<option value="9">9</option>
+				<option value="10">10</option>
+				<option value="11">11</option>
+				<option value="12">12</option>
+		</select>
+		<input type="number" #gy name="gregorianYearsInput" min="1900" max="2077" value="2016" style="color:black;">
+		</div>
+	</div>
+
+	<div class="row">
+        <div class=" col-md-offset-3">
+            <article class="panel panel-default" >
+				<button (click)="getByGregorian(gd.value,gm.value,gy.value)" class="btn btn-primary">حول بواسطة الميلادي</button>
+                <div class="panel-body">
+					<li class="list-unstyled" dir="rtl" *ngFor="let item of myGregorianCalendar">
+						<div *ngIf="item.WD ==='Sunday' ">الأحد</div>
+						<div *ngIf="item.WD ==='Monday' ">الاثنين</div>
+						<div *ngIf="item.WD ==='Tuseday' ">الثلاثاء</div>
+						<div *ngIf="item.WD ==='Wednesday' ">الأربعاء</div>
+						<div *ngIf="item.WD ==='Thursday' ">الخميس</div>
+						<div *ngIf="item.WD ==='Friday' ">الجمعة</div>
+						<div *ngIf="item.WD ==='Saturday' ">السبت</div>
+						الموافق لـ
+						<span>{{item.HY}}/{{item.HM}}/{{item.HD}}</span>هجري قمري
+						<br>
+						<span >{{item.SHY}}/{{item.SHM}}/{{item.SHD}}</span>هجري شمسي
+					</li>
+                </div>
+            </article>
+        </div>
+    </div>
+
+	<div class="row">
+		<div class="col-md-offset-4">
+			<select #shd name="solarHijriDaysInput" size="1" style="color:black;">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+				<option value="6">6</option>
+				<option value="7">7</option>
+				<option value="8">8</option>
+				<option value="9">9</option>
+				<option value="10">10</option>
+				<option value="11">11</option>
+				<option value="12">12</option>
+				<option value="13">13</option>
+				<option value="14">14</option>
+				<option value="15">15</option>
+				<option value="16">16</option>
+				<option value="17">17</option>
+				<option value="18">18</option>
+				<option value="19">19</option>
+				<option value="20">20</option>
+				<option value="21">21</option>
+				<option value="22">22</option>
+				<option value="23">23</option>
+				<option value="24">24</option>
+				<option value="25">25</option>
+				<option value="26">26</option>
+				<option value="27">27</option>
+				<option value="28">28</option>
+				<option value="29">29</option>
+				<option value="30">30</option>
+				<option value="31">31</option>
+			</select>
+			<select #shm name="solarHijriMonthsInput" size="1" style="color:black;">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+				<option value="6">6</option>
+				<option value="7">7</option>
+				<option value="8">8</option>
+				<option value="9">9</option>
+				<option value="10">10</option>
+				<option value="11">11</option>
+				<option value="12">12</option>
+			</select>
+			<input type="number" #shy name="solarHijriYearsInput" min="1278" max="1456" value="1395" style="color:black;">
+		</div>
+	</div>
+	
+	<div class="row">
+        <div class="col-md-offset-3">
+            <article class="panel panel-default" >
+				<button (click)="getBySolarHijri(shd.value,shm.value,shy.value)" class="btn btn-primary">حول بواسطة الهجري الشمسي</button>
+                <div class="panel-body">
+					<li class="list-unstyled" dir="rtl" *ngFor="let item of mySolarHijriCalendar">
+						<div *ngIf="item.WD ==='Sunday' ">الأحد</div>
+						<div *ngIf="item.WD ==='Monday' ">الاثنين</div>
+						<div *ngIf="item.WD ==='Tuseday' ">الثلاثاء</div>
+						<div *ngIf="item.WD ==='Wednesday' ">الأربعاء</div>
+						<div *ngIf="item.WD ==='Thursday' ">الخميس</div>
+						<div *ngIf="item.WD ==='Friday' ">الجمعة</div>
+						<div *ngIf="item.WD ==='Saturday' ">السبت</div>
+						الموافق لـ
+						<span>{{item.HY}}/{{item.HM}}/{{item.HD}}</span>هجري قمري
+						<br>
+						<span>{{item.GY}}/{{item.GM}}/{{item.GD}}</span>ميلادي
+					</li>
+                </div>
+            </article>
+        </div>
+    </div>
+
+</div>
+
+
+	
+
+	
+
+<!--First day Monday	1	1	1318	30	4	1900	10	8	1278-->
+<!--Last day Tuesday	30	12	1500	16	11	2077	25	2	1456-->
+<!--selected="selected"-->

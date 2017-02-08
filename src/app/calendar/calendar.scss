@@ -1,0 +1,113 @@
+
+
+#img{
+    background:url('../../assets/img/Imam-Turki-Mosque.jpg') center no-repeat;
+    height: 10em;
+}
+
+#prayers{
+	background-color: white;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: none;
+  -moz-text-size-adjust: none;
+  font-size: 0.9em; 
+  font-weight: 400;
+	color: #333;
+	text-align: right;
+  padding: 2em;
+  //height: 8em;
+	border-bottom: 0.1em solid #eee;
+}
+	
+.content {
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20vh;
+	width: 30em;
+	max-width: 30em;
+	background-color: white;
+	transition: all 0.5s;
+}
+
+.content .date {
+  background: #ECEFF1;
+  color: #607D8B;
+  padding: 5px 0;
+}
+
+#find-wrapper{
+  cursor: pointer;
+  color: #999;
+  padding-right: 2em;
+
+}
+
+#find-wrapper:hover{
+  color: #333;
+
+}
+
+/* RIPPLE */
+.ripplelink{
+  font-size: 0.8em; 
+  font-weight: 400;
+  color: #999;
+  display:blok;
+  text-align:right;
+  text-decoration:none;
+  position:relative;
+  overflow:hidden;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  z-index:0;
+
+  width: 100%;
+
+  letter-spacing: 0.1em;
+
+  padding: 1em;
+  padding-right: 2em;
+}
+
+
+.ink {
+  display: block;
+  position: absolute;
+  background:rgba(0, 0, 0, 0.1);
+  border-radius: 100%;
+  -webkit-transform:scale(0);
+     -moz-transform:scale(0);
+       -o-transform:scale(0);
+          transform:scale(0);
+}
+
+.animate {
+	-webkit-animation:ripple 0.65s linear;
+   -moz-animation:ripple 0.65s linear;
+    -ms-animation:ripple 0.65s linear;
+     -o-animation:ripple 0.65s linear;
+        animation:ripple 0.65s linear;
+}
+
+@-webkit-keyframes ripple {
+    100% {opacity: 0; -webkit-transform: scale(2.5);}
+}
+@-moz-keyframes ripple {
+    100% {opacity: 0; -moz-transform: scale(2.5);}
+}
+@-o-keyframes ripple {
+    100% {opacity: 0; -o-transform: scale(2.5);}
+}
+@keyframes ripple {
+    100% {opacity: 0; transform: scale(2.5);}
+}
+
+.change-audio {
+  width: 90%;
+  margin: 0 auto;
+  text-align: right;
+  color: #333;
+}
